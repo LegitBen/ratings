@@ -39,15 +39,11 @@ export default {
             { id: 2, name: "The Godfather" },
             { id: 3, name: "The Harry Potter" },
             { id: 4, name: "Zweropolis" },
-          ],
-        },
-        {
-          items: [
             { id: 5, name: "Film 5" },
             { id: 6, name: "Film 6" },
             { id: 7, name: "Film 7" },
           ],
-        },
+        },        
       ],
     };
   },
