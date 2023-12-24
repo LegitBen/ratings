@@ -25,7 +25,6 @@
 
 <script>
 import draggable from "vuedraggable";
-
 export default {
   components: { draggable },
   data() {
@@ -48,7 +47,7 @@ export default {
     };
   },
   methods: {
-    addGroup(event) {
+    addGroup (event) {
       const id = event.item._underlying_vm_.id;
       const name = event.item._underlying_vm_.name;
       const newIndex = event.newIndex;
@@ -57,7 +56,7 @@ export default {
       this.oldGroupIndex = newIndex;
       this.isNewGroup = true;
     },
-    onEnd(groupIndex) {
+    onEnd (groupIndex) {
       if (this.isNewGroup) {
         const target = this.groups.splice(this.oldGroupIndex, 1);
         this.groups.splice(groupIndex + 1, 0, target[0]);
