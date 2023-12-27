@@ -6,6 +6,7 @@ import CinemaDetails from '@/components/pages/CinemaDetails.vue'
 import CreateCinema from '@/components/pages/CreateCinema.vue'
 import RatingFilms from '@/components/pages/RatingFilms.vue'
 import SettingsPage from '@/components/pages/SettingsPage.vue'
+import GroupCinema from '@/components/pages/GroupCinema.vue'
 import { RouteNames } from '@/router/routes'
 
 Vue.use(VueRouter)
@@ -25,6 +26,11 @@ const routes = [
     path: '/cinema/rating',
     name: RouteNames.RATING_FILMS,
     component: RatingFilms
+  },
+  {
+    path: '/cinema/group_cinema',
+    name: RouteNames.GROUP_CINEMA,
+    component: GroupCinema
   },
   {
     path: '/settings',
