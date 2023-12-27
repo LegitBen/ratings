@@ -1,6 +1,7 @@
 import modals from './modals'
 import cinema from './cinema'
 import audio from './audio'
+import group from './group'
 
 export default {
   namespaced: true,
@@ -10,6 +11,7 @@ export default {
   modules: {
     modals,
     cinema,
-    audio
+    audio,
+    group
   }
 }
