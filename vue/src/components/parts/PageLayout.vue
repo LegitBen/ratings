@@ -32,7 +32,24 @@
             {{ getButtonsText.addCinema }}
           </ElButton>
         </RouterLink>
-        <RouterLink v-if="isAdmin" :to="{ name: routeNames.SETTINGS }" class="page-menu__item">
+        <RouterLink
+          :to="{ name: routeNames.GROUP_CINEMA }"
+          class="page-menu__item"
+        >
+          <ElButton
+            type="info"
+            icon="el-icon-files"
+            class="page-menu__item"
+            :plain="$route.name !== routeNames.GROUP_CINEMA"
+          >
+            {{ getButtonsText.groupCinema }}
+          </ElButton>
+        </RouterLink>
+        <RouterLink
+          v-if="isAdmin"
+          :to="{ name: routeNames.SETTINGS }"
+          class="page-menu__item"
+        >
           <ElButton
             type="info"
             icon="el-icon-setting"
@@ -54,34 +71,33 @@ import { RouteNames } from "@/router/routes";
 import { mapGetters } from "vuex";
 
 export default {
-  name: 'PageLayout',
+  name: "PageLayout",
   props: {
     loading: {
       type: Boolean,
-      default: false
+      default: false,
     },
     title: {
       type: String,
-      default: ''
-    }
+      default: "",
+    },
   },
   computed: {
-    ...mapGetters('cinema', [
-      'isAdmin'
-    ]),
-    routeNames () {
-      return RouteNames
+    ...mapGetters("cinema", ["isAdmin"]),
+    routeNames() {
+      return RouteNames;
     },
-    getButtonsText () {
+    getButtonsText() {
       return {
         addCinema: "Добавить фильм",
         createCinema: "Список фильмов",
         makeRating: "Рейтинг фильмов",
-        settings: "Настройки"
-      }
-    }
-  }
-}
+        settings: "Настройки",
+        groupCinema: "Группировка фильмов",
+      };
+    },
+  },
+};
 </script>
 
 <style scoped lang="less">
